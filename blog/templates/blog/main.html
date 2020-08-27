@@ -1,0 +1,68 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+    <!--Новая запись-->
+    <div class="border-bottom shadow-sm">
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-7"><!--Содержание-->
+                    <p><span id="new">NEW</span></p>
+                    <h1>{{ last_post.title }}</h1>
+                    <div id="last_post_content" class="mb-5">
+                        <p>
+                            {% autoescape off %}
+                                {{ last_post.content | slice:":200" }}...
+                            {% endautoescape %}
+                        </p>
+                    </div>
+                    <p>
+                        <a href="{{ last_post.get_absolute_url }}" class="btn btn-lg btn-primary">Читать</a>
+                    </p>
+                </div>
+
+
+                <div class="col"><!--Изоброжение-->
+                    <img id="last_post_img" src="{{ last_post.img.url }}" class=" rounded mx-auto d-block" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Другие статьи-->
+    <div id="posts" class=" mt-5 mb-5">
+        <h2>Другие статьи</h2>
+
+        <div class="mb-3 mt-4  row">
+           {% for post in posts %}
+                <div class=" post_item mb-4 ml-3 mr-5 border">
+                    <a class="link" href="{{ post.get_absolute_url }}">
+                        <div class="m-2 mb-3">
+                            <div>
+                                <span class="post_date">
+                                {{ post.published|date:"d M Y H:i" }}
+                                </span>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <img  src="{{ post.img.url }}" class="img-thumbnail  mx-auto d-block post_img" />
+                            </div>
+                            <div class="text-center">
+                                <h4>{{ post.title }}</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+            
+          </div>
+    </div>
+
+{% endblock %}

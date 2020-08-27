@@ -1,0 +1,24 @@
+#submit {
+    background-color: #FF1493;
+    color: white;
+    font-weight: bold;
+}
+#id_title {
+    color: blue;
+}
+#id_title::placeholder {
+    font-weight: bold;
+    color: #D3D3D3;
+}
+#id_img {
+    display: none;
+}
+#result {
+    height: 300px;
+}
+#file {
+    height: 100px;
+}
+.display_none {
+    display: none;
+}

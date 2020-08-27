@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">  
+{% endblock style %}
+   
+{% block content %}
+    <div id='main'>
+        <div id="post" class="container pt-5 pb-5">
+            
+            <h1>{{ post.title }}</h1>
+            <img src="{{ post.img.url }}" class="rounded mx-auto d-block mt-4 mb-5" />
+            <div>
+                {% autoescape off %}
+                    {{ post.content }}
+                {% endautoescape %}
+                
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

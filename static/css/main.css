@@ -1,0 +1,32 @@
+.link a {
+    display: block;
+}
+
+.post_item {
+    width: 330px;
+    display: inline-block;
+}
+#last_post_img {
+   height: 350px;
+   width: auto;
+}
+
+#last_post_content {
+    width: 400px;
+}
+
+.post_img {
+    width: auto;
+    height: 200px;
+}
+#posts {
+    display: block;
+    margin-left: 10%;
+}
+#new {
+    color: #FF1493;
+}
+.post_date {
+    color: darkgray;
+    font-size: x-small;
+}
