@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', ')v@j)$pj_rbt-2ak^=!==@b@a3p)%$_e@*tkj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://rocky-shelf-68116.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['rocky-shelf-68116.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition
